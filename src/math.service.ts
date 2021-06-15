@@ -8,11 +8,10 @@ export class MathService {
 
     constructor(){
         this.client = ClientProxyFactory.create({
-            transport: Transport.TCP,
-            options:{
-                host:'127.0.0.1',
-                port:8877
-            }
+            transport: Transport.NATS,
+            options: {
+                url: 'nats://localhost:4222'
+              }
         });
     }
 
